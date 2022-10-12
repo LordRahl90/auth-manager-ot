@@ -19,8 +19,13 @@ func (s *Server) userRoutes() {
 	user := s.Router.Group("users")
 	{
 		user.POST("", createUser)
+		user.POST("/authenticate", authenticate)
 		user.GET("/me", getUserDetails)
 	}
+}
+
+func authenticate(c *gin.Context) {
+
 }
 
 func createUser(c *gin.Context) {
